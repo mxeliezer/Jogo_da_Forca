@@ -27,3 +27,5 @@ Editor de texto: Gedit, configurado para produção em C, utlizando a extensão 
 que permite executar comandos externos e scripts de terminal.
 
 Compilador: GCC.
+
+ASCII generator: Text to ASCII, disponível em: <http://www.patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20>.
