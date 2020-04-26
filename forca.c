@@ -76,10 +76,10 @@ void chuta(){
 	printf("Chuta uma letra!\n");
 	scanf(" %c", &chute);
 	if(letra_existe(chute)) {
-        printf("Você acertou: a palavra tem a letra %c\n\n", chute);
-    } else {
-        printf("\nVocê errou: a palavra NÃO tem a letra %c\n\n", chute);
-    }
+        	printf("Você acertou: a palavra tem a letra %c\n\n", chute);
+    	} else {
+        	printf("\nVocê errou: a palavra NÃO tem a letra %c\n\n", chute);
+    	}
 	chutes[chutes_dados] = chute;
 	chutes_dados++;
 }
@@ -89,7 +89,7 @@ int ja_chutou (char letra){
 	for(int j = 0; j < chutes_dados; j++) {
 		if(chutes[j] == letra) {
 			achou = 1;
-		    break;
+		    	break;
 		}
 	}
 	return achou;
@@ -99,24 +99,24 @@ void desenha_forca(){
 
 	int erros = chutes_errados(); // desenhando a forca com 'if ternário'.
 
-	printf(" _______	    \n");
-	printf(" |/	 |	        \n");
-	printf(" |      %c%c%c  \n", (erros>=1?'(':' '),(erros>=1?'_':' '), (erros>=1?')':' '));
-	printf(" |      %c%c%c  \n", (erros>=3?'\\':' '),(erros>=2?'|':' '), (erros>=3?'/': ' '));
-	printf(" |	 %c         \n", (erros>=2?'|':' '));
-	printf(" |	%c %c       \n", (erros>=4?'/':' '),(erros>=4?'\\':' '));
-	printf(" |			    \n");
-	printf("_|___		    \n");
+	printf(" _______	   \n");
+	printf(" |/	 |	   \n");
+	printf(" |      %c%c%c     \n", (erros>=1?'(':' '),(erros>=1?'_':' '), (erros>=1?')':' '));
+	printf(" |      %c%c%c     \n", (erros>=3?'\\':' '),(erros>=2?'|':' '), (erros>=3?'/': ' '));
+	printf(" |	 %c        \n", (erros>=2?'|':' '));
+	printf(" |	%c %c      \n", (erros>=4?'/':' '),(erros>=4?'\\':' '));
+	printf(" |	           \n");
+	printf("_|___		   \n");
 	printf("\n\n");
 
 	for(int i = 0; i < strlen(palavra_secreta); i++) {
 		if(ja_chutou(palavra_secreta[i])) {
 		        printf("%c ", palavra_secreta[i]);
-	    } else {
+	    	} else {
 			printf("_ ");
-	    }
-    }
-    printf("\n\n");
+	    	}
+    	}
+    	printf("\n\n");
 }
 
 // Trabalhando com arquivo .txt com a lista de palavras.
@@ -125,9 +125,9 @@ void escolhe_palavra (){
 	FILE* f;
 	f = fopen("palavras.txt", "r");
 	if(f == 0) {
-        printf("Banco de dados de palavras não disponível\n\n");
-        exit(1);
-    }
+        	printf("Banco de dados de palavras não disponível\n\n");
+        	exit(1);
+    	}
 
 	int qtd_palavras;
 	fscanf(f, "%d", &qtd_palavras);
@@ -153,9 +153,9 @@ void adiciona_palavra(){
 		FILE* f;
 		f = fopen("palavras.txt", "r+");
 		if(f == 0) {
-        	printf("Banco de dados de palavras não disponível\n\n");
-       		exit(1);
-       	}
+        		printf("Banco de dados de palavras não disponível\n\n");
+       			exit(1);
+       		}
 
 		int qtd;
 		fscanf(f, "%d", &qtd);
