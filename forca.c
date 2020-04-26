@@ -167,3 +167,4 @@ int main() {
 		printf("	d–(^ ‿ ^ )z  \n");
 		adiciona_palavra();
 	}
+}
