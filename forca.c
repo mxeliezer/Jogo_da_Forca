@@ -46,7 +46,7 @@ int ja_chutou (char letra){
 	for(int j = 0; j < chutes_dados; j++) {
 		if(chutes[j] == letra) {
 			achou = 1;
-		    break;
+		    	break;
 		}
 	}
 	return achou;
@@ -57,11 +57,11 @@ void desenha_forca(){
 	for(int i = 0; i < strlen(palavra_secreta); i++) {
 		if(ja_chutou(palavra_secreta[i])) {
 		        printf("%c ", palavra_secreta[i]);
-	    } else {
+	    	} else {
 			printf("_ ");
-	    }
-    }
-    printf("\n\n");
+	    	}
+    	}
+   	 printf("\n\n");
 }
 
 // Trabalhando com arquivo .txt com a lista de palavras.
@@ -70,9 +70,9 @@ void escolhe_palavra (){
 	FILE* f;
 	f = fopen("palavras.txt", "r");
 	if(f == 0) {
-        printf("Banco de dados de palavras não disponível\n\n");
-        exit(1);
-    }
+        	printf("Banco de dados de palavras não disponível\n\n");
+        	exit(1);
+	}
 	
 	int qtd_palavras;
 	fscanf(f, "%d", &qtd_palavras);
@@ -98,10 +98,9 @@ void adiciona_palavra(){
 		FILE* f
 		f = fopen("palavras.txt", "r+");
 		if(f == 0) {
-        	printf("Banco de dados de palavras não disponível\n\n");
-       		exit(1);
-       	}
-		
+        		printf("Banco de dados de palavras não disponível\n\n");
+       			exit(1);
+       		}
 		int qtd;
 		fscanf(f, "%d", &qtd);
 		qtd++;
@@ -152,12 +151,13 @@ int main() {
 	abertura();
 	escolhe_palavra ();
 	
-    do {
+	do {
 		
 		chuta();
 		desenha_forca();
 				
 	} while (!acertou() && !enforcou());
+	
 	if(enforcou()){
 		printf("Perdeste e foste para a forca. Mas tente de novo!\n");
 		printf("	ヽ〳 ՞ ᗜ ՞ 〵ง  \n");
@@ -167,4 +167,3 @@ int main() {
 		printf("	d–(^ ‿ ^ )z  \n");
 		adiciona_palavra();
 	}
-
